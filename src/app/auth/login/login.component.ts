@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
 
     ngOnInit() {
         this.form = this.formBuilder.group({
-            username: ['', Validators.required],
+            correo: ['', Validators.required],
             password: ['', Validators.required]
         });
     }
@@ -30,19 +30,25 @@ export class LoginComponent implements OnInit {
 
     onSubmit() {
         this.submitted = true;
-
-       
-
         // stop here if form is invalid
         if (this.form.invalid) {
             return;
         }
-
         this.loading = true;
-        //Llamamos al método login del servicio accountService y le enviamos los datos del 
+        //Llamamos al método login del servicio accountService y le enviamos los datos del
         //formulario
-        this.accountService.login(this.f['username'].value, this.f['passord'].value)
+        this.accountService.login(this.f['correo'].value, this.f['password'].value).subscribe({
+          next:(resp)=>{
+            this.router.navigate([''])
+          },
+          error:(err)=>{
+            console.log(this.f['correo'].value);
+            console.log(this.f['password'].value);
+
+            console.log(err);
+          }
+        })
         //Falta suscribirnos y redirigir al dashboard si es correcto
-            
+
     }
 }

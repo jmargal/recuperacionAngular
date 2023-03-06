@@ -1,0 +1,28 @@
+
+<h1 class="text-center">Añadir médico</h1>
+<form [formGroup]="myForm" (ngSubmit)="add()">
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="nombre" formControlName="nombre" aria-describedby="emailHelp">
+      <span *ngIf="isValidName()" class="form-text text-danger">Longitud minima 5</span>
+
+    </div>
+    <div class="mb-3">
+      <label for="especialidad" class="form-label">Especialidad</label>
+      <input type="text" class="form-control" id="especialidad" formControlName="especialidad">
+      <span *ngIf="isValidEspecialidad()" class="form-text text-danger">Longitud minima 5</span>
+    </div>
+    <div class="mb-3">
+        <label for="telefono" class="form-label">Teléfono</label>
+        <input type="text" class="form-control" id="telefono" formControlName="telefono">
+        <span *ngIf="isValidTelefono()" class="form-text text-danger">No es un teléfono válido</span>
+      </div>
+
+      <div class="mb-3">
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="aceptoNuevos" formControlName="aceptaNuevos">
+            <label class="form-check-label" for="aceptoNuevos">Acepta pacientes nuevos</label>
+          </div>
+      </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+  </form>

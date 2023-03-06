@@ -1,0 +1,11 @@
+
+  <div class="card" style="width: 18rem;">
+    <img src="assets/img/doctors/default.png" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h4 class="card-title">{{medico.nombre}}</h4> <!-- Nombre del médico-->
+      <h5>{{medico.especialidad}}</h5> <!-- Aquí pondremos la especialidad-->
+        <h5> <i class="bi bi-phone"></i>{{medico.telefono}}</h5>
+        <h5 *ngIf=medico.aceptaNuevos>Acepta pacientes nuevos</h5> <!-- Mostrar Acepta pacientes nuevos o no acepta pacientes nuevos según el caso-->
+      <a routerLink='/medicos' class="btn btn-primary">Volver</a>
+    </div>
+  </div>

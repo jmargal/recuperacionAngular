@@ -1,0 +1,17 @@
+<!-- Navbar -->
+
+<header class="navbar navbar-dark sticky-top bg-dark d-flex flex-row p-0 shadow">
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" >Jacarandá Hospital</a>
+
+    <div class="navbar-nav d-flex flex-row">
+      <div class="nav-item ">
+        <a class="nav-link px-3" [routerLink]="['/auth/login']" routerLinkActive="router-link-active" >Sign in</a>
+      </div>
+      <div class="nav-item ">
+        <a class="nav-link px-3" (click)="logout()">Sign out</a>
+      </div>
+    </div>
+
+
+
+</header>

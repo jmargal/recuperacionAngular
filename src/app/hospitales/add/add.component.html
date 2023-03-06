@@ -1,0 +1,36 @@
+<h1 *ngIf="!isAdmin">No eres Admin</h1>
+
+<div *ngIf="isAdmin">
+  <h1 class="text-center">Añadir hospital</h1>
+<form #myForm="ngForm" (ngSubmit)="add()">
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input type="text" class="form-control" minlength="5" ngModel name="nombre" id="nombre" aria-describedby="emailHelp" required>
+      <span *ngIf="isValidName()" class="form-text text-danger">Longitud minima 5</span>
+
+    </div>
+    <div class="mb-3">
+      <label for="direccion" class="form-label">Dirección</label>
+      <input type="text" class="form-control" minlength="10" ngModel name="direccion" id="direccion" required>
+      <span *ngIf="isValidDireccion()" class="form-text text-danger">Longitud minima 10</span>
+
+    </div>
+      <div class="mb-3">
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="tipo" id="tipoPublico" ngModel value="publico" required>
+            <label class="form-check-label" for="tipoPublico">
+              Público
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="tipo" id="tipoPrivado"ngModel value="privado">
+            <label class="form-check-label" for="tipoPrivado">
+              Privado
+            </label>
+          </div>
+      </div>
+    <button [disabled]="myForm.invalid" type="submit" class="btn btn-primary">Enviar</button>
+  </form>
+
+</div>
+

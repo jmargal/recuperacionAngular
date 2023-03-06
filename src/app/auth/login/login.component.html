@@ -1,14 +1,14 @@
 <div class="card">
     <h4 class="card-header">Login</h4>
     <div class="card-body">
-        <form>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
             <div class="mb-3">
                 <label class="form-label">Username</label>
-                <input type="text" class="form-control" />
+                <input type="text" class="form-control" formControlName="correo"/>
             </div>
             <div class="mb-3">
                 <label class="form-label">Password</label>
-                <input type="password" class="form-control" />
+                <input type="password" class="form-control" formControlName="password" />
             </div>
             <div>
                 <button [disabled]="loading" class="btn btn-primary">
