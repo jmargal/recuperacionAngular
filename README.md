@@ -58,6 +58,10 @@ Crea un módulo con carga diferida (lazy loading) llamado medicos, dicho módulo
 
 Se debe crear un servicio separado para los médicos.
 
+## Interceptor
+
+Crear un interceptor que añada de forma automática el token JWT a las peticiones que lo requieran.
+
 ## Criterios de evaluación:
 
 | Criterio | Puntuación |
